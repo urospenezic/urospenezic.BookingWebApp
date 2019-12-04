@@ -1,0 +1,30 @@
+﻿@page "{restaurantId}"
+@model OdeToFood.Pages.Restaurants.BookModel
+@{
+    ViewData["Title"] = "Book";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<h1>Booking @Model.Restaurant.Name</h1>
+<form method="post">
+    <input type="hidden" asp-for="Reservation.ReservationId" />
+    <div class="form-group">
+        <label asp-for="Reservation.Name"></label>
+        <input asp-for="Reservation.Name" class="form-control" readonly value="@Model.HttpContext.User.Identity.Name" />
+        <span class="text-danger" asp-validation-for="Reservation.Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Reservation.StartTime">Start Time: </label>
+        <input asp-for="Reservation.StartTime" type="datetime-local" class="form-control" />
+        <span class="text-danger" asp-validation-for="Reservation.StartTime"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Reservation.EndTIme">End Time:</label>
+        <input type="datetime-local" asp-for="Reservation.EndTIme" class="form-control" />
+        <span class="text-danger" asp-validation-for="Reservation.EndTIme"></span>
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary">Book!</button>
+</form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

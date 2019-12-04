@@ -1,0 +1,36 @@
+﻿@page
+@model OdeToFood.Areas.Identity.Pages.Account.Manage.ViewBookingsModel
+@{
+    ViewData["Title"] = "Change password";
+    ViewData["ActivePage"] = ManageNavPages.ViewBookings;
+}
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Number</th>
+                <th scope="col">Name</th>
+                <th scope="col">Start Time</th>
+                <th scope="col">End Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model.Reservations)
+            {
+                <tr>
+                    <th scope="row">@Model.Number</th>
+                    <td>@reservation.Name</td>
+                    <td>@reservation.StartTime</td>
+                    <td>@reservation.EndTIme</td>
+                    <td><a asp-page="./CancelReservation" asp-route-reservationId="@reservation.ReservationId" class="btn btn-danger">Cancel</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

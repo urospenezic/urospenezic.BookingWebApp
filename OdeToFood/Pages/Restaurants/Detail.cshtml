@@ -1,0 +1,112 @@
+﻿@page "{restaurantId:int}"
+@model OdeToFood.Pages.Restaurants.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+    Layout = null;
+}
+@if (Model.Message != null)
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
+<style>
+    .image{
+        background-size:inherit;
+    }
+    html,body{
+        height:100%;
+    }
+    .breadcrumb_iner_item{
+        background-color:black;
+        text-align:center;
+    }
+    .food_menu{
+        margin-top:0px;
+    }
+</style>
+<link rel="stylesheet" href="~/css/style.css">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<div class="image">
+    <div class="breadcrumb_iner_item">
+        <h1 class="text-white">@Model.Restaurant.Name</h1>
+        <p class="small text-white"><i>@Model.Restaurant.Location</i></p>
+        <a asp-page="./List" class="btn btn-outline-light"> All Restaurants</a>
+        @if (HttpContext.User.Identity.IsAuthenticated)
+        {
+            if (HttpContext.User.IsInRole("Admin") || User.IsInRole("Member"))
+            {
+                <a class="btn btn-outline-light" asp-page="./Book" asp-route-restaurantId="@Model.Restaurant.Id"> Book a table</a>
+            }
+        }
+            </div>
+</div>
+<h2 class="text-center" style="margin-top:50px"><i>Menu Items</i></h2>
+<section class="food_menu">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="single-member">
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="single_food_item media">
+                                <img src="~/img/single_food_1.png" class="img-responsive" alt="...">
+                                <div class="media-body align-self-center">
+                                    <h3>Pork Sandwich</h3>
+                                    <p>They're wherein heaven seed hath nothing</p>
+                                    <h5>Form $40.00</h5>
+                                </div>
+                            </div>
+                            <div class="single_food_item media">
+                                <img src="~/img/single_food_2.png" class="img-responsive" alt="...">
+                                <div class="media-body align-self-center">
+                                    <h3>Roasted Marrow</h3>
+                                    <p>They're wherein heaven seed hath nothing</p>
+                                    <h5>Form $40.00</h5>
+                                </div>
+                            </div>
+                            <div class="single_food_item media">
+                                <img src="~/img/single_food_3.png" class="img-responsive" alt="...">
+                                <div class="media-body align-self-center">
+                                    <h3>Summer Cooking</h3>
+                                    <p>They're wherein heaven seed hath nothing</p>
+                                    <h5>Form $40.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-6">
+                            <div class="single_food_item media">
+                                <img src="~/img/single_food_4.png" class="img-responsive" alt="...">
+                                <div class="media-body align-self-center">
+                                    <h3>Easter Delight</h3>
+                                    <p>They're wherein heaven seed hath nothing</p>
+                                    <h5>Form $40.00</h5>
+                                </div>
+                            </div>
+                            <div class="single_food_item media">
+                                <img src="~/img/single_food_5.png" class="img-responsive" alt="...">
+                                <div class="media-body align-self-center">
+                                    <h3>Tiener Schnitze</h3>
+                                    <p>They're wherein heaven seed hath nothing</p>
+                                    <h5>Form $40.00</h5>
+                                </div>
+                            </div>
+                            <div class="single_food_item media border-dark mb-4">
+                                <img src="~/img/single_food_6.png" class="img-responsive" alt="...">
+                                <div class="media-body align-self-center">
+                                    <h3>Roast Chicken</h3>
+                                    <p>They're wherein heaven seed hath nothing</p>
+                                    <h5>Form $40.00</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="border-top footer text-muted" style="height:50px">
+    <div class="container">
+        &copy; 2019 - OdeToFood - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    </div>
+</footer>
+

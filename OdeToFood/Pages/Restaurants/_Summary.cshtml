@@ -1,0 +1,46 @@
+﻿@using OdeToFood.Core
+@model Restaurant
+<style>
+    #cards{
+        min-width:300px;
+        display:inline ruby;
+        max-width:325px;
+    }
+</style>
+<div class="card bg-light border-dark mb-4" id="cards">
+    <div class="card-header">
+        <h2 class="text-center text-dark"><i>@Model.Name </i></h2>
+    </div>
+    <div class="card-body bg-dark border-bottom border-light">
+        <h5 class="card-title text-center text-light"><b> Basic Information</b></h5>
+        <div class="card-body">
+            <p class="text-light"> Location: @Model.Location</p>
+            <p class="text-light"> Cuisine: @Model.Cuisine </p>
+        </div>
+    </div>
+    <div class="card-footer bg-dark">
+        <div class="card bg-dark">
+            <a class="btn btn-outline-light" asp-page="./Detail" asp-route-restaurantId="@Model.Id">
+                Details
+            </a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Admin"))
+                {
+                    <a class="btn btn-outline-light" asp-page="./Edit" asp-route-restaurantId="@Model.Id">
+                        Edit
+                    </a>
+                    <a class="btn btn-outline-danger" asp-page="./Delete" asp-route-restaurantId="@Model.Id">
+                        Delete
+                    </a>
+                }
+                else if (User.IsInRole("Member"))
+                {
+                    <a class="btn btn-outline-light" asp-page="./Book" asp-route-restaurantId="@Model.Id">
+                        Book!
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</div>

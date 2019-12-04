@@ -1,0 +1,86 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .grid-item-picture {
+        /*This is a placeholder i used instead of a picture while coding the grid
+            background: rgb(22,21,22);
+        background: radial-gradient(circle, rgba(22,21,22,1) 0%, rgba(138,138,157,1) 35%, rgba(197,211,213,1) 100%);*/
+        height:auto;
+
+    }
+
+    .grid-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<div class="text-center">
+    <h1 class="display-4 text-center"><i>Welcome to my restaurants project</i></h1>
+    <div id="carousel-index" class="carousel" data-ride="carousel">
+
+        <ul class="carousel-indicators">
+            <li data-target="#carousel-index" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-index" data-slide-to="1"></li>
+            <li data-target="#carousel-index" data-slide-to="2"></li>
+        </ul>
+
+        <div class="carousel-inner">
+            <p class="carousel-caption align-text-top">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus lectus, fringilla vel ultrices nec, auctor at nisi. Proin at interdum nulla. Donec pellentesque vestibulum nulla nec tempor. Praesent mattis efficitur varius. Mauris ac blandit libero. Pellentesque dui nibh, rhoncus in erat et, imperdiet venenatis velit.</p>
+            <div class="carousel-item">
+                <a asp-page="/Restaurants/List"><img src="~/css/restaurant.jpg" class="container-fluid" alt="Restaurant 1"></a>
+            </div>
+            <div class="carousel-item active">
+                <a asp-page="/Restaurants/List"><img src="~/css/restaurant3.jpg" class="container-fluid" alt="Restaurant 2"></a>
+            </div>
+            <div class="carousel-item">
+                <a asp-page="/Restaurants/List"><img src="~/css/restaurant1.jpg" class="container-fluid" alt="Restaurant 3"></a>
+            </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#carousel-index" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-index" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+
+    </div>
+</div>
+<h2 class="text-center" style="padding-top:10px">Easy way to find a place to eat</h2>
+<div class="container">
+    <div class="container grid-container">
+        <div class="grid-item-picture">
+            <img class="img-fluid" src="~/css/restaurant1.jpg"/>
+        </div>
+        <div class="grid-item">
+            <div class="text-center">
+                <p class="text-center text-dark text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus lectus, fringilla vel ultrices nec, auctor at nisi. Proin at interdum nulla. Donec pellentesque vestibulum nulla nec tempor. Praesent mattis efficitur varius. Mauris ac blandit libero. Pellentesque dui nibh, rhoncus in erat et, imperdiet venenatis velit</p>
+                <a asp-page="/Restaurants/Detail" asp-route-restaurantId="3" class="btn btn-outline-dark">Check us out!</a>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="text-center">
+                <p class="text-center text-dark text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus lectus, fringilla vel ultrices nec, auctor at nisi. Proin at interdum nulla. Donec pellentesque vestibulum nulla nec tempor. Praesent mattis efficitur varius. Mauris ac blandit libero. Pellentesque dui nibh, rhoncus in erat et, imperdiet venenatis velit</p>
+                <a asp-page="/Restaurants/Detail" asp-route-restaurantId="6" class="btn btn-outline-dark">Check us out!</a>
+            </div>
+        </div>
+        <div class="grid-item-picture">
+            <img class="img-fluid" src="~/css/restaurant.jpg"/>
+        </div>
+    </div>
+</div>

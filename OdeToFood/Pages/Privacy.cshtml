@@ -1,0 +1,19 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "About This Application";
+}
+<h1>@ViewData["Title"]</h1>
+<h2 class="text-center"><b>Uros Penezic</b></h2>
+<p class="text-info">Web app has been built on top of asp.net core 2.2 framework. It uses a Razor Page design approach, rather than MVC pattern. Alongside of asp.net, the application uses Grunt.js to compile SASS files into CSS. It uses entity framework core to create a database for you to use while exploring the app. Model layer uses Repository design pattern to abstract data access logic and make it more maintainable and testable. The asp.net core is a good way to ensure DI (dependency injection) pattern has been used. I have tried to constructor inject dependencies or use servises to get my dependencies rather than instantiating objects and create coupling. I have used Bootstrap 4 and custom SASS for design. SASS files make sure that application has support for different screen sizes. Validation is done both through jquery scripts and c# attributes and methods.  </p>
+<p class="text-info"> The application has three sorts of users: Admin, premium member and member. You will be given an admin account on application startup. Login credentials for admin are: </p>
+<p>Email: admin@gmail.com</p>
+<p> Password: adminpassword </p>
+<p class="text-info">As administrator you can perform CRUD operations on restaurants. Edit and Add are beign done on the same page. As a member, you will be able to book. Feel free to register a member account and book a restaurant you've created with your admin account. You can cancel your bookings at account managment</p>
+<p class="text-info">The application performs auto cleanup on startup. It will delete every booking that has expired.</p>
+<p>I hope you will enjoy my little project.</p>
+<p>Best regards,</p>
+<p>Uros</p>
+
+<p>PS: There's a support for google login via their api, but I couldn't deliver my json secret to your computer.</p>
+

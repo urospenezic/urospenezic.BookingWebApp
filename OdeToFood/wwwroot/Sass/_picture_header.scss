@@ -1,0 +1,57 @@
+﻿@import "_variables.scss";
+.image {
+    @media #{$small_mobile} {
+        background-image: url(../img/restaurantheaderSMALLMOBILE.png);
+        /* Full height */
+        height: 100%;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 4px 10px 13px 0px rgba(0,0,0,0.75);
+    }
+
+    @media #{$large_mobile} {
+        background-image: url(../img/restaurantheaderLARGEMOBILE.png);
+        /* Full height */
+        height: 100%;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 4px 10px 13px 0px rgba(0,0,0,0.75);
+    }
+
+    @media #{$tab_device} {
+        background-image: url(../img/restaurantheaderTABDEVICE.png);
+        /* Full height */
+        height: 100%;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 4px 10px 13px 0px rgba(0,0,0,0.75);
+    }
+
+    @media #{$big_screen} {
+        background-image: url(../img/restaurantheaderFULLHD.png);
+        /* Full height */
+        height: 100%;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 4px 10px 13px 0px rgba(0,0,0,0.75);
+    }
+
+    @media#{$extra_big_screen} {
+        background-image: url(../img/restaurantheaderHUGE.jpg);
+        /* Full height */
+        height: 100%;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 4px 10px 13px 0px rgba(0,0,0,0.75);
+    }
+}

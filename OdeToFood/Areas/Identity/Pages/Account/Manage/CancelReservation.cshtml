@@ -1,0 +1,13 @@
+﻿@page "{reservationId:int}"
+@model OdeToFood.Areas.Identity.Pages.Account.Manage.CancelReservationModel
+@{
+    ViewData["Title"] = "CancelReservation";
+}
+<h2>Cancel!</h2>
+<div class="alert alert-danger">
+    Are you sure you want to cancel you reservation?
+</div>
+<form method="post" class="form-check">
+    <button type="submit" class="btn btn-danger"> Yes!</button>
+    <a asp-page="List" class="btn btn-outline-primary"> Cancel</a>
+</form>
